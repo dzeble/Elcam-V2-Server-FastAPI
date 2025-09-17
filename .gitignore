@@ -1,0 +1,71 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Cython
+*.c
+*.so
+*.cpp
+*.h
+*.pyx
+*.pxd
+*.pxi
+
+# PyInstaller
+dist/
+build/
+*.spec
+*.manifest
+*.log
+*.db
+*.sqlite
+*.pth
+*.exe
+*.dll
+*.o
+*.pyd
+*.pyc
+*.pyo
+*.pyw
+*.pytest_cache
+
+# Flask
+.webassets-cache
+.pytest_cache
+.coverage
+
+# Scrapy
+.scrapy
+
+# Sphinx
+docs/_build/
+venv/
+*.egg-info/
+.tox/
+.nox/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+.dmypy
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache
+
+# pyenv
+.python-version
+
+# VSCode
+.vscode/
