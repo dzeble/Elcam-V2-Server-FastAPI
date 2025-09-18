@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+opensearch-py
+boto3
+python-dotenv
+pydantic
+requests
+streamlit
+PyPDF2
+hashlib-compat
+plotly
+pandas
+numpy

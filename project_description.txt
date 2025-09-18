@@ -1,0 +1,62 @@
+ELCAM V2 SERVER - FASTAPI PROJECT DESCRIPTION
+==============================================
+
+PROJECT OVERVIEW
+This is a FastAPI-based web server application called "Elcam V2 Server" that provides a REST API interface for interacting with Amazon OpenSearch Service (formerly Amazon Elasticsearch Service).
+
+PRIMARY PURPOSE
+The application serves as a backend API server that allows clients to:
+1. Index (store) documents in OpenSearch indices
+2. Search for documents within those indices
+
+CORE FUNCTIONALITY
+- Document Indexing: Accepts JSON documents and stores them in specified OpenSearch indices
+- Document Search: Performs search queries against stored documents using text matching
+- AWS Integration: Connects securely to Amazon OpenSearch Service using AWS credentials and IAM authentication
+
+TECHNICAL ARCHITECTURE
+- Framework: FastAPI (Python web framework)
+- Database/Search: Amazon OpenSearch Service
+- Authentication: AWS IAM with AWSV4 signature authentication
+- Data Format: JSON documents with Pydantic models for validation
+- Deployment: Docker containerization support
+
+KEY COMPONENTS
+1. Main API (app/main.py): Core application with two main endpoints:
+   - POST /index/{index_name}: Creates/updates documents in an index
+   - GET /search/{index_name}: Searches documents by name field
+
+2. Document Model: Simple structure with 'name' (string) and 'value' (integer) fields
+
+3. AWS Integration: 
+   - Uses boto3 for AWS credentials management
+   - Implements secure connection to OpenSearch with SSL and retry logic
+   - Requires AWS_HOST, AWS_REGION, AWS_SERVICE environment variables
+
+4. Project Structure:
+   - Organized FastAPI application with separate modules for auth, users, core configuration
+   - Database session management and base models
+   - Comprehensive testing setup with pytest
+   - Docker containerization for deployment
+   - Documentation for OpenSearch integration
+
+USE CASES
+This server appears designed for applications that need:
+- Fast document storage and retrieval
+- Full-text search capabilities
+- Scalable search infrastructure
+- AWS cloud-native deployment
+- RESTful API access to search functionality
+
+DEVELOPMENT STATUS
+The project is in active development (V2 indicates this is a second version/iteration) with:
+- Basic CRUD operations implemented
+- Docker deployment configuration
+- Testing framework established
+- Documentation for OpenSearch concepts and usage
+
+ENVIRONMENT REQUIREMENTS
+- Python 3.x
+- AWS account with OpenSearch service access
+- Environment variables for AWS credentials and OpenSearch endpoint
+- Dependencies: FastAPI, OpenSearch-py, boto3, pydantic, uvicorn
